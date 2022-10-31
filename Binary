@@ -1,0 +1,2 @@
+conversion = "{0: b}".format(int(input("input a positive number")))
+print(conversion)
