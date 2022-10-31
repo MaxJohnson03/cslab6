@@ -1,0 +1,6 @@
+message = input("Enter a message. ")
+
+import random
+num = random.randint(2,20)
+newmessage = " " * num, join(message)
+print(newmessage)
