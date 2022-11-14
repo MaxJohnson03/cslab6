@@ -1,6 +1,27 @@
+import random
+import string
 message = input("Enter a message. ")
 
-import random
 num = random.randint(2,20)
-newmessage = " " * num, join(message)
-print(newmessage)
+space = " "
+numspace = num * space
+space_pos = 0
+
+message = message.split()
+for n in message:
+    message[space_pos] = numspace.join(message[space_pos])
+    space_pos+=1
+
+message = " ".join(message)
+
+pos = 0
+for i in message:
+    if i == " ":
+        char = random.choice(string.ascii_letters)
+        message = message[:pos] + char + message[pos+1:]
+        pos+=1
+    elif i == message[-1]:
+        break
+    else:
+        pos+=1
+print(message)
